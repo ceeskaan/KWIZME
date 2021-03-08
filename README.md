@@ -1,4 +1,5 @@
-# resnet-flask-webapp
-this is flask webapp deploying resnet50 model
+Kwizme question generation WEBAPP.
 
-tutorial: https://youtu.be/i8Dw9msoDWQ
+Model stolen from github.com/patil-suraj/question_generation
+
+
