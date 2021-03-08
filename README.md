@@ -1,2 +1,5 @@
-# deploy-ml-model-flask
- deploy your ml model using flask
+Kwizme question generation WEBAPP.
+
+Model stolen from github.com/patil-suraj/question_generation
+
+
