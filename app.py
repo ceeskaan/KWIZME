@@ -11,11 +11,11 @@ def index():
 	return render_template("index.html", data="hey")
 
 
-@app.route("/prediction", methods=["POST"])
-def prediction():
+@app.route("/qselect", methods=["POST"])
+def qselect():
 	text = request.form['sometext']
 	data = model(text)
-	return render_template("prediction.html", data=data)
+	return render_template("q-select.html", data=data)
 
 
 if __name__ == "__main__":

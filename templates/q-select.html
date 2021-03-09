@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flash Cards</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"/>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flashcards.css') }}">
+</head>
+<body>
+	<center>
+		<h1>Here are your questions:</h1>
+        {% for qa_pair in data %}
+            <div class>
+                <h1>Question: </h1>
+                <p>{{qa_pair['question']}}</p>
+            </div>
+            <div class>
+                <h1>Answer: </h1>
+                <p>{{qa_pair['answer']}}</p>
+            </div>
+        {% endfor %}
+        <a href="/">Try with some more text!</a>
+	</center>
+
+</body>
+</html>
