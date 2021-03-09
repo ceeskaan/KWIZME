@@ -15,7 +15,7 @@ def index():
 def qselect():
 	text = request.form['sometext']
 	data = model(text)
-	return render_template("q-select.html", data=data)
+	return render_template("q-select.html", data=data, text=text)
 
 
 if __name__ == "__main__":

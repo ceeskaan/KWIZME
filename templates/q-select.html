@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Question Selection</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-	<center>
-		<h1>Here are your questions:</h1>
-        {% for qa_pair in data %}
-            <div class>
-                <h1>Question: </h1>
-                <p>{{qa_pair['question']}}</p>
-            </div>
-            <div class>
-                <h1>Answer: </h1>
-                <p>{{qa_pair['answer']}}</p>
-            </div>
-        {% endfor %}
-        <a href="/">Try with some more text!</a>
-	</center>
+  <head>
+    <title>Kwizme - Question Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <style>
+    .card {
+      transform: translateX(-100%);
+      transition: transform 0.5s, opacity 2s;
+      opacity: 0;
+      text-align: center;
+    }
+    
+    .show {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    
+    #accordion {
+      max-width: 500px;
+      margin: 50px auto;
+      box-shadow: 0 0 1px rgba(0,0,0,0.1);
+    }
+    
+    #text {
+      max-width: 500px;
+      margin: 50px auto;
+      border:1px solid black;
+    }
+    </style>
+  </head>
+  
+  <body> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</body>
+
+    <div class="container">
+        <div class="row">
+            <div id="text" class="col-xs-6">
+            <p> {{text}} </p>
+            </div>
+    
+            <div id="accordion" class="col-xs-6">
+               {% for qa_pair in data %}
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-block" data-toggle="collapse" data-target="#demo-{{loop.index}}" aria-expanded="true" aria-controls="demo-{{loop.index}}">
+                      {{qa_pair['question']}}
+                    </button>
+                  </h5>
+                </div>
+            
+                <div id="demo-{{loop.index}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    {{qa_pair['answer']}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+         </div>
+     </div>
+
+    <script type="text/javascript">
+        $("document").ready(function() {
+          $(".card").delay(500).each(function(i) {
+            $(this).delay(500 * i).queue(function() {
+              $(this).addClass("show");
+            })
+          })
+        });
+    </script>
+
+  </body>
 </html>
