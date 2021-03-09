@@ -14,9 +14,7 @@ def index():
 @app.route("/prediction", methods=["POST"])
 def prediction():
 	text = request.form['sometext']
-
 	data = model(text)
-
 	return render_template("prediction.html", data=data)
 
 
