@@ -1,5 +1,5 @@
 Kwizme question generation WEBAPP.
 
-Model stolen from github.com/patil-suraj/question_generation
+Model inspired by github.com/patil-suraj/question_generation
 
 
