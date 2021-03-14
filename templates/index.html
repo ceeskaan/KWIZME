@@ -1,58 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<head>
 
-    <!-- custom CSS styles -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>KWIZME</title>
+  <title>KWIZME</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new-age.css') }}">
+
 </head>
-<body>
 
-<div class="container-fluid">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a class="link-unstyled" href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><a href="#">Data</a></li>
-  </ol>
-</nav>
-</div>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">KWIZME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#download">How does it work?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- main section -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Let's get the KWIZ on!</h1>
+            <form class="col-12" action="qselect" method="POST" enctype="multipart/form-data">
+              <div>
+               <input placeholder="Paste your study material here to generate questions."
+               class="form-control bg-light" style="height:100px" type="text" name="sometext">
+             </div>
+             <div class="mt-5" >
+               <input class="btn btn-outline btn-xl" style="background-color:transparent"  type="submit" name="btn" value="kwiz me!">
+             </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
-<div class="container">
-	<h1>Hi, please add your text to generate your questions:</h1>
-	<form action="qselect" method="POST" enctype="multipart/form-data">
-		<input type="text" name="sometext">
-		<input type="submit" name="btn">
-	</form>
-</div>
+<!-- Slogan -->
+  <section class="cta">
+    <div class="cta-content">
+      <div class="container">
+        <h2>Study smart.<br><small>Study with KWIZME.</small></h2>
+        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">WTF is this?!</a>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
 
 
-{#<div class="container">#}
-{#	<form action="qselect" method="POST" enctype="multipart/form-data">#}
-{#          <div class="form-group">#}
-{#            <label for="exampleFormControlTextarea1">Enter your text:</label>#}
-{#            <textarea class="form-control" id="sometext" rows="3"></textarea>#}
-{#            <input type="submit" name="btn" class="btn btn-success">#}
-{#          </div>#}
-{#	</form>#}
-{#</div>#}
+<!-- footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; KWIZME 2021. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Custom scripts for this template -->
+  <script type=text/javascript src="{{
+  url_for('static', filename='/new-age.js') }}"></script>
 
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
+
 </html>

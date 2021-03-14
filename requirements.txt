@@ -1,0 +1,4 @@
+torch
+nltk
+tranformers==3.0.0
+Flask
